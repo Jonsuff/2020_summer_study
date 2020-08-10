@@ -66,20 +66,17 @@ categories: Deep_Learning
 - Greedy NMS 알고리즘은 iou값이 threshold값 이상이면 그 박스의 score를 0으로 만들어 물체가 없다고 판단하게 한다. 하지만 이 방법은 TP수를 줄게하는 요인이 되기 때문에 soft-NMS 알고리즘이 대두되었다.
 
   soft-NMS는 위와 같은 상황에서 score를 극단적으로 0으로 만드는 것이 아니라 특정 공식에 의한 패널티를 주어 score를 낮추는 방식이다. 이때 사용되는 패널티는 Gaussian penalty 공식으로, 다음과 같다.
-  $$
-  \\
-  s_i = s_ie^{-{iou(\mathcal{M, b_i})^2 \over \sigma}}, \forall b_i \notin \mathcal{D}
-  \\
-  $$
-
+  
+  ![](https://raw.githubusercontent.com/Jonsuff/jonnote/master/images/adaptiveNMS/gaussian_penalty.png)
+  
   > D : final detection
   >
-  > s_i : score
+> s_i : score
   >
   > b_i : i번째 box prediction
   >
   > 참고 논문 : [Improving Object Detection With One Line of Code](https://arxiv.org/pdf/1704.04503.pdf)
-
+  
 - 다음은 Greedy NMS의 pseudo-code 이다.
 
   ![](https://raw.githubusercontent.com/Jonsuff/jonnote/master/images/adaptiveNMS/NMS_pseudo.png)
@@ -99,29 +96,19 @@ categories: Deep_Learning
      만약 빽빽한 공간에 M이 위치했다면, 그와 highly-overlapped인 이웃 박스들은 TP일 확률이 높기 때문에 이들은 제거하지 않아야 하지만, 듬성한 공간에 M이 위치했다면 이때의 이웃박스들은 FP일 확률이 높기 때문에 큰 패널티를 주어야 한다.
 
 - 이 밸런스를 더 잘 조절하기 위해 Adaptive NMS는 object density를 다음과 같이 정의하고 사용한다.
-  $$
-  \\
-  d_i := {\underset{b_j \in \mathcal{G}, i \ne j}{{max}}} iou(b_i, b_j)
-  \\
-  $$
-  여기서 물체 i에 대한 density는 전체 ground truth 박스들과 물체 i와의 iou 최대값이다. 
-
-- 위에서 얻어낸 object density를 이용하여 박스를 제거하는 과정은 다음과 같다.
-  $$
-  \\
-  N_{\mathcal{M}}:= max(N_t, d_{\mathcal{M}}),\\
-  s_i = \begin{cases}
-  s_i, & iou(\mathcal{M, b_i}) < N_{\mathcal{M}} \\
-  s_if(iou(\mathcal{M}, b_i)), & iou(\mathcal{M}, b_i) \ge N_{\mathcal{M}}\\
-  \end{cases}
   
-  \\
-  $$
-
+  ![](https://raw.githubusercontent.com/Jonsuff/jonnote/master/images/adaptiveNMS/density_function.png)
+  
+  여기서 물체 i에 대한 density는 전체 ground truth 박스들과 물체 i와의 iou 최대값이다. 
+  
+- 위에서 얻어낸 object density를 이용하여 박스를 제거하는 과정은 다음과 같다.
+  
+  ![](https://raw.githubusercontent.com/Jonsuff/jonnote/master/images/adaptiveNMS/pruning_step.png)
+  
   > N_M : 물체 M의 threshold
   >
   > d_M : 물체 M의 density
-
+  
 - 위의 과정의 세가지 특징을 살펴보면,
 
   1. 물체 M과의 이웃 박스가 M에서 멀리 떨어져 있다면(iou < threshold), 그 이웃 박스들은 기존 NMS처럼 그대로 유지된다.
