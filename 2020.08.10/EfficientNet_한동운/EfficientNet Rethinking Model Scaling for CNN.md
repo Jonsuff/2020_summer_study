@@ -92,9 +92,9 @@ Figure. 4의 실험결과를 보면 조합에 따라 동일한 FLOPS에서 정�
 
 ### Model Architecture
 
-<img src="C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807222215980.png" alt="image-20200807222215980" style="zoom:80%;" />
+<img src="https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807222215980.png?raw=true" style="zoom:80%;" />
 
-> <img src="C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200811120126759.png" alt="image-20200811120126759" style="zoom:60%;" />
+> <img src="https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200811120126759.png?raw=true" style="zoom:60%;" />
 >
 > 
 >
