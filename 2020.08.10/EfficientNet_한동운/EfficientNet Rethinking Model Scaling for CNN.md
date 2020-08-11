@@ -40,7 +40,7 @@
 
 - ##### 전 Best Conv model과 비교해 8.4배 작고  6.1배의 속도 향상을 가짐
 
-<img src="C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807204029546.png" alt="image-20200807204029546" style="zoom:70%;" />
+<img src="https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807204029546.png?raw=true" />
 
 
 
