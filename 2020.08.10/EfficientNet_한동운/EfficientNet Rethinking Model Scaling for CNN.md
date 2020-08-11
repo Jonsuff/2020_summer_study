@@ -46,7 +46,7 @@
 
 ### Model scaling method
 
-![image-20200807204055246](C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807204055246.png)
+![image-20200807204055246](https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807204055246.png?raw=true)
 
 
 
@@ -74,7 +74,7 @@
 
  반면 본 논문에서는 기존에 잘 고려되지 않던 Depth, Height, Resolution을 동시에 고려하는 Scaling 방법을 사용한다.
 
-![image-20200807210522460](C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807210522460.png)
+![image-20200807210522460](https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807210522460.png?raw=true)
 
  Figure. 3은 본 논문에서 실시한 실험결과를 보여준다. 제일 왼쪽 실험 결과를 보면 Depth를 Scaling함에 따라 정확도의 변화를 볼 수 있고 Width를 늘리면 정확도가 높아지다가 어느 순간부터는 정확도가 포화되는 것을 알 수 있다.
 
@@ -82,7 +82,7 @@
 
 이와 비슷하게 Width를 고정하고 Depth와 Resolution을 변화시키는 실험을 진행하였다.
 
-<img src="C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807211654755.png" alt="image-20200807211654755" style="zoom:80%;" />
+<img src="https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807211654755.png?raw=true" style="zoom:80%;" />
 
 
 
