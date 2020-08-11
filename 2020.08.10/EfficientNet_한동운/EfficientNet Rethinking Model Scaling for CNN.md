@@ -126,7 +126,7 @@ Figure. 4의 실험결과를 보면 조합에 따라 동일한 FLOPS에서 정�
 
 
 
-​                                                 ![image-20200807214103348](C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807214103348.png)
+​                                                 ![image-20200807214103348](https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807214103348.png?raw=true)
 $$
 \phi:유저가 \ 가지고\ 있는 resource에\ 따른\ 조정\ 하이퍼파라미터\\
 \alpha*\beta*\gamma = 2\ 고정한\ 이유\ 2배\ 4배등으로\ scaling-up하기\ 위함
@@ -146,25 +146,25 @@ $$
 
 
 
-<img src="C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807224902011.png" alt="image-20200807224902011" style="zoom:80%;" />
+<img src="https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807224902011.png?raw=true" style="zoom:80%;" />
 
 
 
 
 
-![image-20200807223720858](C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807223720858.png)
+![image-20200807223720858](https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807223720858.png?raw=true)
 
 Table. 2에서 가장 중요한 정보는 Parameter이다. 기존 모델과 Compound Scaling이 적용된 EfficientNet과 비교해보면 정확도는 더 높지만 Parameter 수가 획기적으로 줄어든 것을 볼 수 있다.
 
 가장 하단부에 보면 가장 최신 모델인 GPipe보다 정확도가 높고 Parameter가 8.4배 정도 차이가 나는 것을 볼 수 있다.
 
-<img src="C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807224127387.png" alt="image-20200807224127387" style="zoom:80%;" />
+<img src="https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807224127387.png?raw=true" style="zoom:80%;" />
 
 Table. 3은 기존 모델에 Compound Scaling을 적용한 결과를 나타낸 표이다. 표를 보면 Compound Scaling을 적용했을시에 정확도가 더 높아지는 것을 알 수 있다.
 
 
 
-![image-20200807224457252](C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807224457252.png)
+![image-20200807224457252](https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807224457252.png?raw=true)
 
 Parameter가 정말 획기적으로 줄어들었다는것을 확인할 수 있다.
 
@@ -172,7 +172,7 @@ Parameter가 정말 획기적으로 줄어들었다는것을 확인할 수 있�
 
 ### Class Activation Map (CAM)
 
-![image-20200807224607736](C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807224607736.png)
+![image-20200807224607736](https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807224607736.png?raw=true)
 
  위 Figure 7은 Compound scaling 적용시에 얼마나 feature를 잘 찾아내는가를 **CAM**으로 보여준다.  다른것들과 달리 Compound Scaling을 적용한 모델이 물체의 특징을 더 세밀하게 잘 찾아내는 것을 알 수 있다.
 
@@ -180,7 +180,7 @@ Parameter가 정말 획기적으로 줄어들었다는것을 확인할 수 있�
 
 
 
-<img src="C:\Users\milab\Documents\Study\EfficientNet_Rethinking Model Scaling for CNN\image-20200807224902011.png" alt="image-20200807224902011" style="zoom:80%;" />
+<img src="https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807224902011.png?raw=true" alt="image-20200807224902011" style="zoom:80%;" />
 
 
 
