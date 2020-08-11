@@ -126,7 +126,8 @@ Figure. 4의 실험결과를 보면 조합에 따라 동일한 FLOPS에서 정�
 
 
 
-​                                                 ![image-20200807214103348](https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807214103348.png?raw=true)
+​![image-20200807214103348](https://github.com/Jonsuff/2020_summer_study/blob/Dongun/2020.08.10/EfficientNet_%ED%95%9C%EB%8F%99%EC%9A%B4/img/image-20200807214103348.png?raw=true)
+
 $$
 \phi:유저가 \ 가지고\ 있는 resource에\ 따른\ 조정\ 하이퍼파라미터\\
 \alpha*\beta*\gamma = 2\ 고정한\ 이유\ 2배\ 4배등으로\ scaling-up하기\ 위함
