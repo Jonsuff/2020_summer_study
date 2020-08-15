@@ -148,7 +148,7 @@ Fast normalized Feature Fusion은 activation function을 ReLU로 사용하여 �
 
 <img src="img/image-20200815163658278.png" alt="image-20200815163658278" style="zoom: 67%;" />
 
-<img src="img/image-20200815163803569.png" alt="image-20200815163803569" style="zoom: 67%;" />
+<img src="img/image-20200815163803569.png" alt="image-20200815163803569" style="zoom: 60%;" />
 
 
 
@@ -188,7 +188,7 @@ Figure.4 를 보면 EfficientDet가 얼마나 효율적인 Detector인지 알 �
 
 ### BiFPN
 
-<img src="img/image-20200815170732113.png" alt="image-20200815170732113" style="zoom:67%;" />
+<img src="img/image-20200815170732113.png" alt="image-20200815170732113" style="zoom: 60%;" />
 
 논문 Ablation Study에서는 본 논문에서 사용된 method들이 정말로 효과가 있는지 비교해 보는 실험을 진행했다. Table. 4를 보면 BiFPN을 적용한 모델이 AP와 Parameter FLOPs면에서 더 월등히 좋다는 것을 알 수 있다.
 
