@@ -38,7 +38,7 @@
 
 * location에 대한 regression target 값은 실수 벡터인 t=(l, t, r, b)가 존재한다.
 
-  * ![](./image/fig1.png)
+  * ![](./image/fig1.PNG)
 
   * 위치가 여러 bounding box에 속하면 모호한(ambiguity) 샘플로 간주하며, regression 대상으로 면적이 최소인 bounding box만 선택하면 된다.
 
@@ -49,7 +49,7 @@
 
 * FCOS는 많은 foreground sample에 대하여 regression 학습에 활용 할 수 있으며, 이는 GT box와 함께 iou가 충분히 높은 anchor box만 positive sample로 간주하는 anchor box 기반의 detector의 성능을 넘어설 수 있는 이유가 된다.
 
-* ![](./image/fig2.png)
+* ![](./image/fig2.PNG)
 
   * Backbone network의 뒤에는 4개의 conv layer가 존재하여 80개의 클래스에 대하여 예측수행과 (l,t,r,b)에 대한 location 예측을 수행한다.
   * backbone CNN 다음에 1x1 convolutional layer로 C3, C4, C5 생성
@@ -73,14 +73,14 @@
 
 * CNN에서 최종 feature map의 큰 stride는 상대적으로 낮은 BPR(best positive recall, 최적 재현율)을 초래할 수 있다.
   * 큰 stride로 인해 최종 feature map의 위치가 인코딩 되지 않은 객체를 recall 하는것이 불가능하기 때문에 BPR이 낮을 수 있다고 생각이 되지만, multi level FPN기반의 FCOS는 경험적으로 anchor box 기반의 RetinaNet의 BPR 보다 나은 성능을 나타낸다.
-  * ![](./image/fig3.png)
+  * ![](./image/fig3.PNG)
 * GT box의 overlap으로 다루기 힘든 ambiguity를 유발 할 수 있다.
   * Multi-level prediction을 통해 FCN 기반의 detector와 비교하여 동등하거나 더 나은 성능을 얻을 수 있다.
   * 각 level에 대한 bounding box regression의 range를 직접 제한하기 때문
   * 각 위치에 대한 $(l^*,t^*,r^*,b^*)$에 대하여 $max(l^*,t^*,r^*,b^*)>m_i$ 혹은 $max(l^*,t^*,r^*,b^*)<m_{i-1}$을 만족한다면 negative sample로 설정되므로 bounding box regression을 할 필요가 없다.
     * $m_i$는 feature level이 regression 하는 최대 거리를 의미하며, m2, m3, m4, m5, m6, m7은 0, 64, 128, 512 혹은 그 이상으로 설정
   * 2이상의 object에 할당되어 있는 경우, 최소 영역을 대상으로 하는 GT box를 선택
-  * ![](./image/fig4.png)
+  * ![](./image/fig4.PNG)
 * 서로 다른 feature level 간의 head를 공유하여 detection 매개변수를 효율적으로 만들 뿐만 아니라, 성능을 향상 시킨다.
 
 
@@ -93,7 +93,7 @@
 
   * center-ness는 해당 위치가 담당하는 물체 중심까지의 정규화된 거리를 의미
 
-  * ![](./image/fig5.png)
+  * ![](./image/fig5.PNG)
 
   * $$
     centerness^* = \sqrt{\frac{min(l^*, r^*)}{max(l^*, r^*)}\times\frac{min(t^*, b^*)}{max(t^*, b^*)}}
@@ -105,16 +105,16 @@
 
 * low-quality의 bounding box는 최종 NMS에 의하여 필터링 되어 detection의 성능을 현저하게 향상시킨다.
 
-  * ![](./image/fig6.png)
+  * ![](./image/fig6.PNG)
   * 발표 이후,  normalization과 positive sample의 중앙 부분만 사용하는 방법의 조합으로 더 나은 성능을 얻을 수 있음을 확인.
 
 
 
 #### Results / Conclusion
 
-![](./image/fig8.png)
+![](./image/fig8.PNG)
 
-![](./image/fig7.png)
+![](./image/fig7.PNG)
 
 * FCOS는 wide range에서의 object에 대하여 매우 작고 큰 object가 있는 경우, overlap이 심한 경우 등에서 detection이 가능하다.
 * anchor와 region proposal 가 없는 1-stage detector 를 제안하였으며, RetainNet, YOLO, SSD를 포함한 anchor기반의 1-stage detector와 비교하여 나은 성능과 설계 복잡성이 덜한 네트워크를 제안하였다.
