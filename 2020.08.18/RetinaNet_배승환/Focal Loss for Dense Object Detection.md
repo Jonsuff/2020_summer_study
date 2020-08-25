@@ -95,7 +95,7 @@ $$
 
  RetinaNet은 하나로 통합된 network로 backbone network와 2개의 subnetworks로 구성된다.
 
-![](./image/fig2.png)
+![](./image/fig2.PNG)
 
 * subnetwork는 convolution을 활용하여 classification과 localization을 수행한다.
 
@@ -126,22 +126,22 @@ $$
 
 #### Experiments
 
-![](./image/fig4.png)
+![](./image/fig4.PNG)
 
 * foreground examples
   * 20% 정도의 hardest positive sample(0.8~1.0부분)이 전체 loss의 절반을 차지하며, $\gamma$가 커질수록 top 20%의 example에 집중되지만, 효과는 작은편
 * background examples
   * $\gamma$가 2일 때, 대부분의 loss는 hard negative example(1.0부분)에서 나오며, easy negative의 효과를 줄이고 hard negative에 집중
 
-![](./image/fig3.png)
+![](./image/fig3.PNG)
 
 
 
-![](./image/fig5.png)
+![](./image/fig5.PNG)
 
-​											<img src="./image/fig6.png" style="zoom:67%;" />	<img src="./image/fig7.png" style="zoom:67%;" />
+​											<img src="./image/fig6.PNG" style="zoom:67%;" />	<img src="./image/fig7.PNG" style="zoom:67%;" />
 
-<img src="./image/fig8.png" style="zoom:67%;" />
+<img src="./image/fig8.PNG" style="zoom:67%;" />
 
 
 
