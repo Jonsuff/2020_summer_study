@@ -10,7 +10,7 @@
 
 
 
- 본 논문에서 말하길 현재 Mobile 환경에서 사용되는 MboileNet, ShuffleNet 등 과 같은 Network들은 Depthwise separable convolution을 사용해 framework에서 구현하기 어렵고 효율적이지 않는다는 주장을 한다. 
+ 본 논문에서 말하길 현재 Mobile 환경에서 사용되는 MobileNet, ShuffleNet 등 과 같은 Network들은 Depthwise separable convolution을 사용해 framework에서 구현하기 어렵고 효율적이지 않는다는 주장을 한다. 
 
  이러한 점을 개선하기 위해 저자는 전통적인 Convolution 연산만을 사용해도 충분하다고 주장하며,  논문의 이름과 같이 Mobile Device에서 사용될 수 있는 새로운 Network를 제안한다.
 
@@ -46,7 +46,7 @@
 
 ### Stem Block
 
- 논문에서는 Stem Block은 Inception-v4에서 영감을 받았다고 한다.
+ 논문에서는 Stem Block은 Inception-V4에서 영감을 받았다고 한다.
 
 <img src="img/a27d24_9f8291c65d184f31b18e3cf0eaff4387~mv2_d_1382_1412_s_2.webp" alt="img" style="zoom: 67%;" />
 
@@ -56,7 +56,7 @@
 
  위의 Figure. 2 의 stem layer는 첫번째 Dense layer에 들어가기 전에 사용되는 block으로 연산 비용을 효율적이게 사용하기 위해 설계되었다고 한다.
 
-stem block을 보면 input data의 width와 height가 4배 줄어든 것을 볼 수 있다. 이는 전체 구조가 cost-efficient하게 되며 feature expression ability가  많은 연산을 추가적으로 하지 않아도 향상된다고 말한다. (ex 첫번째 Conv layer 채널 늘리기 등)
+stem block을 보면 input data의 width와 height가 4배 줄어든 것을 볼 수 있다. 이는 전체 구조가 cost-efficient하게 되며 많은 연산을 (ex 첫번째 Conv layer 채널 늘리기 등) 추가적으로 하지 않아도 feature 표현력이 향상된다고 말한다.
 
 
 
@@ -84,7 +84,11 @@ stem block을 보면 input data의 width와 height가 4배 줄어든 것을 볼 
 
  본 논문에서도 기존 DenseNet에서 사용된 구조를 많이 활용한다.  하지만 DenseNet에서 사용되는 bottleneck구조를 그대로 사용하면 한가지 문제가 생긴다.
 
- 문제는 바로 초기 1x1 Conv를 할 때 초기 input channel의 수를  4*K 의 수만큼 만드는 것 이다. 이러면 input channel보다 큰 값이 되기 때문에 bottleneck을 사용하는 의도와 맞지 않게된다. 그래서 본 논문에서는 상황에 따라 채널의 수를 block에 따라 유동적으로 바꾸는 방법을 사용하여 bottleneck에서 채널이 늘어나는 것을 방지 했다. 그리하여 위방법을 사용함으로써 정확도는 조금 줄었지만 연산량을 28.5% 줄였다고 한다.
+ 문제는 바로 초기 1x1 Conv를 할 때 초기 input channel의 수를  4*K 의 수만큼 만드는 것 이다. 이러면 input channel보다 큰 값이 되기 때문에 bottleneck을 사용하는 의도와 맞지 않게된다. 그래서 본 논문에서는 상황에 따라 채널의 수를 block에 따라 유동적으로 바꾸는 방법을 사용하여 bottleneck에서 채널이 늘어나는 것을 방지 했다. 그리하여 위 방법을 사용함으로써 정확도는 조금 줄었지만 연산량을 28.5% 줄였다고 한다.
+
+> 구현된 Code 보기
+>
+> https://github.com/Robert-JunWang/Pelee/blob/master/peleenet.py
 
 <img src="img/image-20200829153305521.png" alt="image-20200829153305521" style="zoom:80%;" />
 
@@ -92,7 +96,7 @@ stem block을 보면 input data의 width와 height가 4배 줄어든 것을 볼 
 
 ### Transition Layer without Compression
 
- Transition layer는 DenseNet에서 사용되었으며 feature map의 가로, 세로, 사이즈를 줄여주고 feature map을 줄여주는 layer이다. 여기에는 feature map을 줄여주는 compression이라는 기능이 있었는데 논문에서는 Transition layer에서의 compression은 feature expression을 저하시킨다고 하며 compression 없이 channel을 같게 해주었다고 한다.
+  Transition layer는 DenseNet에서 사용되었으며 feature map의 가로, 세로, 사이즈를 줄여주고 feature map을 줄여주는 layer이다. 여기에는 feature map을 줄여주는 compression이라는 기능이 있었는데 논문에서는 Transition layer에서의 compression은 feature expression을 저하시킨다고 하며 compression 없이 channel을 같게 해주었다고 한다.
 
 
 
@@ -118,7 +122,7 @@ stem block을 보면 input data의 width와 height가 4배 줄어든 것을 볼 
 
 
 
-### Model Arcitecture
+### Model Architecture
 
 ![image-20200829164116077](img/image-20200829164116077.png)
 
@@ -158,7 +162,7 @@ PeleeNet이 다른 모델에 비해 size가 매우 작으며 대체적으로 정
 
  논문 후반부에서는 앞에서 설계된 PeleeNet를 활용한 Pelee object detector에 대해서 말한다.
 
-본 논문에서는 SSD와 PeleeNet을 결합한 모델을 만드는데 논무에서는 Pelee라고 부른다. 
+본 논문에서는 SSD와 PeleeNet을 결합한 모델을 만드는데 논문에서는 Pelee라고 부른다. 
 
  Pelee는 SSD를 변형한 모델이며 Yolo v2보다 조금 더 좋은 성능을 보이는데 특징은 다음과 같다.
 
@@ -185,7 +189,7 @@ PeleeNet이 다른 모델에 비해 size가 매우 작으며 대체적으로 정
 
 
 
-그전에 SSD에 대해서 간단하게 알아보자
+추가적으로 SSD에 대해서 간단하게 알아보자
 
 <img src="img/ssdarchitecture.png" alt="SSD-architecture" style="zoom:80%;" />
 
@@ -201,7 +205,7 @@ PeleeNet이 다른 모델에 비해 size가 매우 작으며 대체적으로 정
 
 
 
-SSD를 기준으로 계산해보면 다음과 같다. 
+ SSD를 기준으로 계산해보면 다음과 같다. 
 
 - m = 6, s_min = 0.2, s_max = 0.9로 계산하면 결과는 s_k = [0.2, 0.34, 0.48, 0.62, 0.76, 0.9]
 
