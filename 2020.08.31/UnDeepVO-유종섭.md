@@ -101,7 +101,7 @@ categories: VODE
      >
      > $$L^{SSIM}$$ : Structural Similarity Index, 구조적 유사 지수 - [참고자료](https://m.blog.naver.com/PostView.nhn?blogId=y4769&logNo=220505513170&proxyReferer=https:%2F%2Fwww.google.com%2F)
      >
-     > $$L^{l_1}$$ : L1 distance(x축값 + y축값)
+     > $$L^{l_1}$$ : L1 distance()
 
   2. *Disparity Consistency Loss* : 
 
